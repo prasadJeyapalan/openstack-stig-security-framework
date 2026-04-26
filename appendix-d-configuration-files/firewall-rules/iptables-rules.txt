@@ -1,0 +1,12 @@
+# Keystone Rate Limiting
+-A INPUT -p tcp --dport 5000 -m state --state NEW -m hashlimit --hashlimit-above 5/min --hashlimit-mode srcip --hashlimit-name keystone_auth -j LOG --log-prefix "KEYSTONE_RATE_LIMIT: "
+-A INPUT -p tcp --dport 5000 -m state --state NEW -m hashlimit --hashlimit-above 5/min --hashlimit-mode srcip --hashlimit-name keystone_auth -j DROP
+
+# Memcached Access Restriction
+-A INPUT -i br-mgmt -p tcp --dport 11211 -j ACCEPT
+-A INPUT -p tcp --dport 11211 -j DROP
+
+# MariaDB Access Restriction
+-A INPUT -i br-mgmt -p tcp --dport 3306 -j ACCEPT
+-A INPUT -i lo -p tcp --dport 3306 -j ACCEPT
+-A INPUT -p tcp --dport 3306 -j DROP

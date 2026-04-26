@@ -1,0 +1,13 @@
+{
+    "context_is_admin": "role:admin",
+    "default": "role:admin",
+    
+    "upload_image": "role:admin",
+    "modify_image": "role:admin",
+    "add_image": "role:admin",
+    
+    "download_image": "",
+    "get_image": "",
+    "get_images": "",
+    "delete_image": "rule:admin_or_owner"
+}
