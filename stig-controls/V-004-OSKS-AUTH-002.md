@@ -56,7 +56,7 @@ Fix Text:
 
 Current Implementation (Applied):
 
-This control is currently implemented through OSKS-AUTH-001 iptables rate limiting which restricts authentication attempts to 5 per minute per source IP.
+In the assessed deployment, OSKS-AUTH-001 provides a compensating control for this requirement through network-layer rate limiting. OSKS-AUTH-002 defines the recommended application-layer account lockout enhancement for defense-in-depth.
 
 No additional configuration required. Verify OSKS-AUTH-001 is applied:
 
